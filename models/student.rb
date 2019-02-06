@@ -34,8 +34,9 @@ class Student
     sql = "SELECT * FROM student
     WHERE id = $1"
     values = [id]
-    result = SqlRunner.run(sql, values)
-    return result.map {|student| Student.new(student)}
+    student = SqlRunner.run(sql, values)
+    result = Student.new(student.first)
+    return result
   end
 
   def pretty_print()
