@@ -1,5 +1,5 @@
-DROP TABLE house;
 DROP TABLE student;
+DROP TABLE house;
 
 CREATE TABLE house(
   id SERIAL8 PRIMARY KEY,
@@ -10,6 +10,6 @@ CREATE TABLE student(
   id SERIAL8 PRIMARY KEY,
   first_name VARCHAR(255),
   last_name VARCHAR(255),
-  house_name VARCHAR(255) REFERENCES house(id) ON DELETE CASCADE,
+  house_id INT4 REFERENCES house(id) ON DELETE CASCADE,
   age INT4
 );
