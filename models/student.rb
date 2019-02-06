@@ -9,12 +9,12 @@ class Student
     @id = details["id"].to_i if details["id"]
     @first_name = details["first_name"]
     @last_name = details["last_name"]
-    @house = details["house"]
+    @house_name = details["house_name"]
     @age = details["age"].to_i
   end
 
   def save
-    sql = "INSERT INTO student(first_name, last_name, house, age)
+    sql = "INSERT INTO student(first_name, last_name, house_name, age)
     VALUES($1, $2, $3, $4)
 
     RETURNING id;"
